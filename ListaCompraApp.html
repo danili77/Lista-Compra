@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+  <script>
+    var app = angular.module("miListaCompra",[]);
+    app.controller("miCtrl",function($scope){
+      $scope.productos = ["Leche","Pan","Huevos"];
+      $scope.anadirArticulo = function(){
+        $scope.error = " ";
+        if(!$scope.anademe){return;}
+        if(!scope.productos.indexOf($scope.anademe) == -1)
+         {
+           $scope.productos.push($scope.anademe);
+         }
+         else {
+           $scope.error ="El articulo ya esta en tu lista de la compra";
+         }
+       }
+       $scope.removeItem = function(x)
+       {
+         $scope.error = " ";
+         $scope.productos.splice(x,1);
+
+      }
+    });
+  </script>
+</body>
+</html>
